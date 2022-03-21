@@ -118,7 +118,7 @@ class StsClient
 
             return $this->backwardCompat($result);
         } catch (Exception $e) {
-            $result = isset($result) ? "error: " . $e->getMessage() : json_encode($result);
+            $result = isset($result) ? json_encode($result) : "error: " . $e->getMessage();
 
             throw new Exception($result);
         }
